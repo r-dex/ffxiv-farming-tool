@@ -1,0 +1,181 @@
+.box {
+    display: inline-block;
+    height: 40px;
+    margin-right: 5px;
+    position: relative;
+    width: 40px;
+}
+.icon {
+    border-radius: 5px;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+}
+.shade {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: 2;
+}
+.tooltip-overlay {
+    border-radius: 5px;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: 3;
+}
+.mount-icon {
+    border-radius: 5px;
+}
+.headrow {
+    border-bottom: 1px solid white;
+    height: 70px;
+    left: 0;
+    padding-left: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+.contentrow {
+    left: 0px;
+    padding-left: 10px;
+    position: relative;
+    top: 75px;
+}
+.contentcell {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    width: 500px;
+}
+.no-headrow {
+    top: 10px !important;
+}
+.member-name {
+    display: inline-block;
+    padding-left: 5px;
+    vertical-align: top;
+    width: 240px;
+}
+#FCIcon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+#FCName {
+    display: inline;
+    vertical-align: middle;
+}
+.member-button {
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+    width: 40px;
+}
+.member-button .btn {
+    width: 40px;
+}
+.dutybutton {
+    display: inline-block;
+    padding-left: 15px;
+    vertical-align: middle;
+}
+form {
+    width: 500px;
+}
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+footer {
+    margin-top: 25px;
+}

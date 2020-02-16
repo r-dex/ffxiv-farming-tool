@@ -1,0 +1,6 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !(\.gif|\.jpg|\.png)$ [NC]
+RewriteRule ^([0-9.]*)$ /index.php?freecompany=$1
+RewriteRule ^([A-Za-z0-9]{6})$ /index.php?customgroup=$1
