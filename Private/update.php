@@ -50,7 +50,7 @@
             if ($Group['Type'] == 'FreeCompany') {
                 //FreeCompany make string of SQL insert commands commencing with DELETE FROM `Characters` WHERE `FreeCompanyID` = ? then multi-line execute
                 $sql = "DELETE FROM `Characters` WHERE `FreeCompanyID` = '{$Group['ID']}';\n";
-                echo($sql);
+                $mysqli->query($sql);
                 flush();
 
                 $FreeCompany = new Rosaworks\Lodestone\FreeCompany();
@@ -63,7 +63,7 @@
                         ."', `FreeCompanyServer` = '".$FCServer."', `FreeCompanyCrest` = '".$FCCrest."', `FreeCompanyLastUpdate` = '".time()
                         ."' WHERE `FreeCompanyID` = '".$FreeCompany->ID."';\n";
                     echo($line);
-                    $sql .= $line;
+                    $mysqli->query($line);
                     flush();
                 
                     $Count = floor($FreeCompany->MemberCount / 50);
@@ -87,7 +87,7 @@
                                 ." `FreeCompanyID` = '".$FreeCompany->ID."',"
                                 ." `LastUpdated` = '".time()."';\n";
                             echo($line);
-                            $sql .= $line;
+                            $mysqli->query($line);
                             flush();
 
                             $Character->getMounts();
@@ -102,13 +102,11 @@
                                 $line = substr($line, 0, -2);
                                 $line .= ";\n";
                                 echo($line);
-                                $sql .= $line;
+                                $mysqli->query($line);
                                 flush();
                             }
                         }
                     }
-
-                    $mysqli->multi_query($sql);
                 }
             } elseif ($Group['Type'] == 'CustomGroup') {
                 $TimeNow = time();
