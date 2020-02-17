@@ -44,7 +44,7 @@
     }
     $stmt->close();
 
-    $CustomGroupName = 'Custom Group';
+    $CustomGroupName = $mysqli->real_escape_string(urldecode($_GET['GroupName']));
     $CustomGroupTime = time();
     $stmt = $mysqli->prepare("INSERT INTO `CustomGroups` (`CustomGroupID`, `CustomGroupName`, `CustomGroupLastAccessed`, `CustomGroupLastUpdated`) VALUES (?, ?, ?, ?)");
     $stmt->bind_param('ssii', $CustomGroupID, $CustomGroupName, $CustomGroupTime, $CustomGroupTime);

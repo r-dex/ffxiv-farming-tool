@@ -97,7 +97,13 @@
 
         $i = 1;
         if (count($FailedCharacters) == 0) {
+            if (!empty($_GET['GroupName'])) {
+                $GroupName = $mysqli->real_escape_string(urldecode($_GET['GroupName']));
+            } else {
+                $GroupName = 'Custom Group';
+            }
             echo('<form id="CustomGroupConfirmation">');
+            echo('<h3>'.$GroupName.'</h3><input type="hidden" id="GroupName" name="GroupName" value="'.$GroupName.'" />');
             foreach ($OKCharacters as $Character) {
                 echo('<div');
                 if ($i > 1) {
