@@ -53,9 +53,9 @@
                 }
                 $stmtCharacters->close();
             }
-            $stmtUpdate = $mysqli->prepare("UPDATE `CustomGroups` SET `CustomGroupLastAccessed` = ?");
+            $stmtUpdate = $mysqli->prepare("UPDATE `CustomGroups` SET `CustomGroupLastAccessed` = ? WHERE `CustomGroupID` = ?");
             $Time = time();
-            $stmtUpdate->bind_param('s', $Time);
+            $stmtUpdate->bind_param('ss', $Time, $_GET['customgroup']);
             $stmtUpdate->execute();
             $stmtUpdate->close();
         } else {
