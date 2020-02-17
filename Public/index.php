@@ -53,6 +53,11 @@
                 }
                 $stmtCharacters->close();
             }
+            $stmtUpdate = $mysqli->prepare("UPDATE `CustomGroups` SET `CustomGroupLastAccessed` = ?");
+            $Time = time();
+            $stmtUpdate->bind_param('s', $Time);
+            $stmtUpdate->execute();
+            $stmtUpdate->close();
         } else {
             //Error page, not found
         }
