@@ -127,12 +127,17 @@
                         $Character = new Rosaworks\Lodestone\Character();
                         if ($Character->getCharacter($row[0])) {
                             $CharacterName = $mysqli->real_escape_string($Character->Name);
+                            if (empty($Character->FreeCompany['ID'])) {
+                                $FreeCompanyID = '-';
+                            } else {
+                                $FreeCompanyID = $Character->FreeCompany['ID'];
+                            }
                             $sql = "INSERT INTO `Characters` (`CharacterID`, `CharacterName`, `FreeCompanyID`, `LastUpdated`)"
-                                ." VALUES ('".$Character->ID."', '".$CharacterName."', '".$Character->FreeCompany['ID']."', '".time()."')"
+                                ." VALUES ('".$Character->ID."', '".$CharacterName."', '".$FreeCompanyID."', '".time()."')"
                                 ." ON DUPLICATE KEY UPDATE"
                                 ." `CharacterID` = '".$Character->ID."',"
                                 ." `CharacterName` = '".$CharacterName."',"
-                                ." `FreeCompanyID` = '".$Character->FreeCompany['ID']."',"
+                                ." `FreeCompanyID` = '".$FreeCompanyID."',"
                                 ." `LastUpdated` = '".time()."';\n";
                             echo($sql);
                             $mysqli->query($sql);
